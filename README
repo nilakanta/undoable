@@ -1,0 +1,27 @@
+= undoable: an activerecord undo plugin
+
+
+It is based on RUR(Rails-Undo-Redo @ http://github.com/psq/rails-undo-redo) plugin.
+
+With undoable, 
+ - any active record operation (create, update, delete) can have undo, and it will include all the associations as well
+ - active-records with awesome_nested_set (http://github.com/collectiveidea/awesome_nested_set/tree/master) will support undo
+ - any transaction with changes to multiple active-records can have undo
+                                                                             
+Installation
+ - As a rails plugin, 
+		script/plugin install 
+
+Setup
+ - Need to generate a migration to add two tables "UndoTransactions" and "UndoRecords" by
+	 	script/generate add_undoable_tables
+ - Migrate the db by
+		rake db:migrate
+                    
+Usage
+ - By default, all the models are undoable. 
+	 To exclude some models, 
+		(a) copy spec/undoable/rails/active_record/undoable_exclusions.yml file to app/config folder, 
+		(b) add the models to that file.
+  
+Compatible with rails v2.3.5, awesome_nested_set v1.2.0

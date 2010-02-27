@@ -1,0 +1,7 @@
+doc
+coverage*
+.DS_Store
+*~
+tmp
+log
+db/schema.rb
