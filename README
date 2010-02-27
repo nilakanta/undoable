@@ -10,7 +10,7 @@ With undoable,
                                                                              
 Installation
  - As a rails plugin, 
-		script/plugin install 
+		script/plugin install git@github.com:nilakanta/undoable.git
 
 Setup
  - Need to generate a migration to add two tables "UndoTransactions" and "UndoRecords" by
